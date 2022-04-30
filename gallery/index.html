@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://pawamoy.github.io/markdown-exec/gallery/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.1">
     
     
       
@@ -171,7 +171,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/pawamoy/markdown-exec/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/pawamoy/markdown-exec" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -301,7 +301,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/pawamoy/markdown-exec/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/pawamoy/markdown-exec" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -472,6 +472,13 @@
         <li class="md-nav__item">
   <a href="#draw-a-diagram-using-the-diagrams-library" class="md-nav__link">
     Draw a diagram using the Diagrams library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-an-svg-image-from-code-snippets-with-rich" class="md-nav__link">
+    Build an SVG image from code snippets with Rich
   </a>
   
 </li>
@@ -735,6 +742,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#build-an-svg-image-from-code-snippets-with-rich" class="md-nav__link">
+    Build an SVG image from code snippets with Rich
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -939,7 +953,7 @@ Global options:
 </div>
 </div>
 </div>
-<h2 id="draw-a-diagram-using-the-diagrams-library">Draw a diagram using the Diagrams library<a class="headerlink" href="#draw-a-diagram-using-the-diagrams-library" title="Permanent link">¤</a></h2>
+<h2 id="draw-a-diagram-using-the-diagrams-library">Draw a diagram using the <a href="https://github.com/mingrammer/diagrams">Diagrams</a> library<a class="headerlink" href="#draw-a-diagram-using-the-diagrams-library" title="Permanent link">¤</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Result</label><label for="__tabbed_5_2">Source</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -963,6 +977,186 @@ Global options:
         <span class="n">png</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">diagram</span><span class="o">.</span><span class="n">dot</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 
 <span class="n">output_html</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;data:image/png;base64, </span><span class="si">{</span><span class="n">png</span><span class="si">}</span><span class="s1">&quot;/&gt;&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="build-an-svg-image-from-code-snippets-with-rich">Build an SVG image from code snippets with <a href="https://github.com/Textualize/rich">Rich</a><a class="headerlink" href="#build-an-svg-image-from-code-snippets-with-rich" title="Permanent link">¤</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Result</label><label for="__tabbed_6_2">Source</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div markdown="0"><svg width="1071.0" height="714" viewBox="0 0 1071.0 714"
+     xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @font-face {
+            font-family: "Fira Code";
+            src: local("FiraCode-Regular"),
+                 url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                 url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+            font-style: normal;
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: "Fira Code";
+            src: local("FiraCode-Bold"),
+                 url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                 url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+            font-style: bold;
+            font-weight: 700;
+        }
+        span {
+            display: inline-block;
+            white-space: pre;
+            vertical-align: top;
+            font-size: 18px;
+            font-family:'Fira Code','Cascadia Code',Monaco,Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .blink {
+           animation: blinker 1s infinite;
+        }
+        @keyframes blinker {
+            from { opacity: 1.0; }
+            50% { opacity: 0.3; }
+            to { opacity: 1.0; }
+        }
+        #wrapper {
+            padding: 140px;
+            padding-top: 100px;
+        }
+        #terminal {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0c0c0c;
+            border-radius: 14px;
+            outline: 1px solid #484848;
+        }
+        #terminal:after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: '';
+            border-radius: 14px;
+            background: rgb(71,77,102);
+            background: linear-gradient(90deg, #804D69 0%, #4E4B89 100%);
+            transform: rotate(-4.5deg);
+            z-index: -1;
+        }
+        #terminal-header {
+            position: relative;
+            width: 100%;
+            background-color: #2e2e2e;
+            margin-bottom: 12px;
+            font-weight: bold;
+            border-radius: 14px 14px 0 0;
+            color: #f2f2f2;
+            font-size: 18px;
+            box-shadow: inset 0px -1px 0px 0px #4e4e4e,
+                        inset 0px -4px 8px 0px #1a1a1a;
+        }
+        #terminal-title-tab {
+            display: inline-block;
+            margin-top: 14px;
+            margin-left: 124px;
+            font-family: sans-serif;
+            padding: 14px 28px;
+            border-radius: 6px 6px 0 0;
+            background-color: #0c0c0c;
+            box-shadow: inset 0px 1px 0px 0px #4e4e4e,
+                        0px -4px 4px 0px #1e1e1e,
+                        inset 1px 0px 0px 0px #4e4e4e,
+                        inset -1px 0px 0px 0px #4e4e4e;
+        }
+        #terminal-traffic-lights {
+            position: absolute;
+            top: 24px;
+            left: 20px;
+        }
+        #terminal-body {
+            line-height: 22px;
+            padding: 14px;
+        }
+        .r1 {color: #f2f2f2; text-decoration-color: #f2f2f2;background-color: #0c0c0c;}
+.r2 {background-color: #272822;color: #f2f2f2; text-decoration-color: #f2f2f2;}
+.r3 {color: #7f7f7f; text-decoration-color: #7f7f7f; background-color: #272822;color: #f2f2f2; text-decoration-color: #f2f2f2;}
+.r4 {color: #f92672; text-decoration-color: #f92672; background-color: #272822}
+.r5 {color: #f8f8f2; text-decoration-color: #f8f8f2; background-color: #272822}
+.r6 {color: #66d9ef; text-decoration-color: #66d9ef; background-color: #272822}
+.r7 {color: #a6e22e; text-decoration-color: #a6e22e; background-color: #272822}
+.r8 {color: #403e35; text-decoration-color: #403e35; background-color: #272822}
+.r9 {color: #e6db74; text-decoration-color: #e6db74; background-color: #272822}
+    </style>
+    <foreignObject x="0" y="0" width="100%" height="100%">
+        <body xmlns="http://www.w3.org/1999/xhtml">
+            <div id="wrapper">
+                <div id="terminal">
+                    <div id='terminal-header'>
+                        <svg id="terminal-traffic-lights" width="90" height="21" viewBox="0 0 90 21" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="8" r="8" fill="#ff6159"/>
+                            <circle cx="38" cy="8" r="8" fill="#ffbd2e"/>
+                            <circle cx="62" cy="8" r="8" fill="#28c941"/>
+                        </svg>
+                        <div id="terminal-title-tab">Rich</div>
+                    </div>
+                    <div id='terminal-body'>
+                        <div><span class="r2">  </span><span class="r3"> 1 </span><span class="r2">                                                            </span></div>
+<div><span class="r2">  </span><span class="r3"> 2 </span><span class="r4">from</span><span class="r5"> contextlib </span><span class="r4">import</span><span class="r5"> asynccontextmanager</span><span class="r2">                  </span></div>
+<div><span class="r2">  </span><span class="r3"> 3 </span><span class="r4">import</span><span class="r5"> httpx</span><span class="r2">                                                </span></div>
+<div><span class="r2">  </span><span class="r3"> 4 </span><span class="r2">                                                            </span></div>
+<div><span class="r2">  </span><span class="r3"> 5 </span><span class="r2">                                                            </span></div>
+<div><span class="r2">  </span><span class="r3"> 6 </span><span class="r6">class</span><span class="r5"> </span><span class="r7">BookClient</span><span class="r5">(httpx</span><span class="r4">.</span><span class="r5">AsyncClient):</span><span class="r2">                        </span></div>
+<div><span class="r2">  </span><span class="r3"> 7 </span><span class="r8">│   </span><span class="r6">async</span><span class="r5"> </span><span class="r6">def</span><span class="r5"> </span><span class="r7">get_book</span><span class="r5">(self, book_id: int) </span><span class="r4">-&gt;</span><span class="r5"> str:</span><span class="r2">          </span></div>
+<div><span class="r2">  </span><span class="r3"> 8 </span><span class="r8">│   │   </span><span class="r5">response </span><span class="r4">=</span><span class="r5"> </span><span class="r6">await</span><span class="r5"> self</span><span class="r4">.</span><span class="r5">get(</span><span class="r9">f&quot;/books/{</span><span class="r5">book_id</span><span class="r9">}&quot;</span><span class="r5">)</span><span class="r2">      </span></div>
+<div><span class="r2">  </span><span class="r3"> 9 </span><span class="r8">│   │   </span><span class="r6">return</span><span class="r5"> response</span><span class="r4">.</span><span class="r5">text</span><span class="r2">                                </span></div>
+<div><span class="r2">  </span><span class="r3">10 </span><span class="r2">                                                            </span></div>
+<div><span class="r2">  </span><span class="r3">11 </span><span class="r2">                                                            </span></div>
+<div><span class="r2">  </span><span class="r3">12 </span><span class="r7">@asynccontextmanager</span><span class="r2">                                        </span></div>
+<div><span class="r2">  </span><span class="r3">13 </span><span class="r6">async</span><span class="r5"> </span><span class="r6">def</span><span class="r5"> </span><span class="r7">book_client</span><span class="r5">(</span><span class="r4"><em></span><span class="r5">args, </span><span class="r4"></em><em></span><span class="r5">kwargs):</span><span class="r2">                     </span></div>
+<div><span class="r2">  </span><span class="r3">14 </span><span class="r8">│   </span><span class="r6">async</span><span class="r5"> </span><span class="r6">with</span><span class="r5"> BookClient(</span><span class="r4"></em></span><span class="r5">args, </span><span class="r4">**</span><span class="r5">kwargs) </span><span class="r6">as</span><span class="r5"> client:</span><span class="r2">       </span></div>
+<div><span class="r2">  </span><span class="r3">15 </span><span class="r8">│   │   </span><span class="r6">yield</span><span class="r5"> client</span><span class="r2">                                        </span></div>
+<div><span class="r2">  </span><span class="r3">16 </span><span class="r2">                                                            </span></div>
+<div><span class="r1"></span><span class="r1">                                                                 </span></div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </foreignObject>
+</svg>
+</div></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">from</span> <span class="nn">rich.syntax</span> <span class="kn">import</span> <span class="n">Syntax</span>
+
+<span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">from contextlib import asynccontextmanager</span>
+<span class="s2">import httpx</span>
+
+
+<span class="s2">class BookClient(httpx.AsyncClient):</span>
+<span class="s2">    async def get_book(self, book_id: int) -&gt; str:</span>
+<span class="s2">        response = await self.get(f&quot;/books/</span><span class="si">{book_id}</span><span class="s2">&quot;)</span>
+<span class="s2">        return response.text</span>
+
+
+<span class="s2">@asynccontextmanager</span>
+<span class="s2">async def book_client(*args, **kwargs):</span>
+<span class="s2">    async with BookClient(*args, **kwargs) as client:</span>
+<span class="s2">        yield client</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">devnull</span><span class="p">:</span>
+    <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">devnull</span><span class="p">)</span>
+    <span class="n">renderable</span> <span class="o">=</span> <span class="n">Syntax</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">line_numbers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent_guides</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">renderable</span><span class="p">)</span>
+<span class="n">svg</span> <span class="o">=</span> <span class="n">console</span><span class="o">.</span><span class="n">export_svg</span><span class="p">(</span><span class="n">clear</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">output_html</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -1059,7 +1253,7 @@ Global options:
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.bd0b6b67.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.8aa65030.min.js"></script>
