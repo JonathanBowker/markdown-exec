@@ -985,7 +985,7 @@ Global options:
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Result</label><label for="__tabbed_6_2">Source</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><div markdown="0"><svg width="1071.0" height="714" viewBox="0 0 1071.0 714"
+<p><div markdown="0"><svg width="1071.0" height="692" viewBox="0 0 1071.0 692"
      xmlns="http://www.w3.org/2000/svg">
     <style>
         @font-face {
@@ -1082,14 +1082,16 @@ Global options:
             padding: 14px;
         }
         .r1 {color: #f2f2f2; text-decoration-color: #f2f2f2;background-color: #0c0c0c;}
-.r2 {background-color: #272822;color: #f2f2f2; text-decoration-color: #f2f2f2;}
-.r3 {color: #7f7f7f; text-decoration-color: #7f7f7f; background-color: #272822;color: #f2f2f2; text-decoration-color: #f2f2f2;}
-.r4 {color: #f92672; text-decoration-color: #f92672; background-color: #272822}
-.r5 {color: #f8f8f2; text-decoration-color: #f8f8f2; background-color: #272822}
-.r6 {color: #66d9ef; text-decoration-color: #66d9ef; background-color: #272822}
-.r7 {color: #a6e22e; text-decoration-color: #a6e22e; background-color: #272822}
-.r8 {color: #403e35; text-decoration-color: #403e35; background-color: #272822}
-.r9 {color: #e6db74; text-decoration-color: #e6db74; background-color: #272822}
+.r2 {background-color: #263238;color: #f2f2f2; text-decoration-color: #f2f2f2;}
+.r3 {color: #7f7f7f; text-decoration-color: #7f7f7f; background-color: #263238;color: #f2f2f2; text-decoration-color: #f2f2f2;}
+.r4 {color: #89ddff; text-decoration-color: #89ddff; background-color: #263238; font-style: italic}
+.r5 {color: #eeffff; text-decoration-color: #eeffff; background-color: #263238}
+.r6 {color: #ffcb6b; text-decoration-color: #ffcb6b; background-color: #263238}
+.r7 {color: #bb80b3; text-decoration-color: #bb80b3; background-color: #263238}
+.r8 {color: #89ddff; text-decoration-color: #89ddff; background-color: #263238}
+.r9 {color: #303d43; text-decoration-color: #303d43; background-color: #263238; font-style: italic}
+.r10 {color: #82aaff; text-decoration-color: #82aaff; background-color: #263238}
+.r11 {color: #c3e88d; text-decoration-color: #c3e88d; background-color: #263238}
     </style>
     <foreignObject x="0" y="0" width="100%" height="100%">
         <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1104,22 +1106,21 @@ Global options:
                         <div id="terminal-title-tab">Rich</div>
                     </div>
                     <div id='terminal-body'>
-                        <div><span class="r2">  </span><span class="r3"> 1 </span><span class="r2">                                                            </span></div>
-<div><span class="r2">  </span><span class="r3"> 2 </span><span class="r4">from</span><span class="r5"> contextlib </span><span class="r4">import</span><span class="r5"> asynccontextmanager</span><span class="r2">                  </span></div>
-<div><span class="r2">  </span><span class="r3"> 3 </span><span class="r4">import</span><span class="r5"> httpx</span><span class="r2">                                                </span></div>
+                        <div><span class="r2">  </span><span class="r3"> 1 </span><span class="r4">from</span><span class="r5"> </span><span class="r6">contextlib</span><span class="r5"> </span><span class="r4">import</span><span class="r5"> asynccontextmanager</span><span class="r2">                  </span></div>
+<div><span class="r2">  </span><span class="r3"> 2 </span><span class="r4">import</span><span class="r5"> </span><span class="r6">httpx</span><span class="r2">                                                </span></div>
+<div><span class="r2">  </span><span class="r3"> 3 </span><span class="r2">                                                            </span></div>
 <div><span class="r2">  </span><span class="r3"> 4 </span><span class="r2">                                                            </span></div>
-<div><span class="r2">  </span><span class="r3"> 5 </span><span class="r2">                                                            </span></div>
-<div><span class="r2">  </span><span class="r3"> 6 </span><span class="r6">class</span><span class="r5"> </span><span class="r7">BookClient</span><span class="r5">(httpx</span><span class="r4">.</span><span class="r5">AsyncClient):</span><span class="r2">                        </span></div>
-<div><span class="r2">  </span><span class="r3"> 7 </span><span class="r8">│   </span><span class="r6">async</span><span class="r5"> </span><span class="r6">def</span><span class="r5"> </span><span class="r7">get_book</span><span class="r5">(self, book_id: int) </span><span class="r4">-&gt;</span><span class="r5"> str:</span><span class="r2">          </span></div>
-<div><span class="r2">  </span><span class="r3"> 8 </span><span class="r8">│   │   </span><span class="r5">response </span><span class="r4">=</span><span class="r5"> </span><span class="r6">await</span><span class="r5"> self</span><span class="r4">.</span><span class="r5">get(</span><span class="r9">f&quot;/books/{</span><span class="r5">book_id</span><span class="r9">}&quot;</span><span class="r5">)</span><span class="r2">      </span></div>
-<div><span class="r2">  </span><span class="r3"> 9 </span><span class="r8">│   │   </span><span class="r6">return</span><span class="r5"> response</span><span class="r4">.</span><span class="r5">text</span><span class="r2">                                </span></div>
+<div><span class="r2">  </span><span class="r3"> 5 </span><span class="r7">class</span><span class="r5"> </span><span class="r6">BookClient</span><span class="r8">(</span><span class="r5">httpx</span><span class="r8">.</span><span class="r5">AsyncClient</span><span class="r8">):</span><span class="r2">                        </span></div>
+<div><span class="r2">  </span><span class="r3"> 6 </span><span class="r9">│   </span><span class="r7">async</span><span class="r5"> </span><span class="r7">def</span><span class="r5"> </span><span class="r10">get_book</span><span class="r8">(self,</span><span class="r5"> book_id</span><span class="r8">:</span><span class="r5"> </span><span class="r10">int</span><span class="r8">)</span><span class="r5"> </span><span class="r8">-&gt;</span><span class="r5"> </span><span class="r10">str</span><span class="r8">:</span><span class="r2">          </span></div>
+<div><span class="r2">  </span><span class="r3"> 7 </span><span class="r9">│   │   </span><span class="r5">response </span><span class="r8">=</span><span class="r5"> </span><span class="r7">await</span><span class="r5"> </span><span class="r8">self.</span><span class="r5">get</span><span class="r8">(</span><span class="r7">f</span><span class="r11">&quot;/books/</span><span class="r8">{</span><span class="r5">book_id</span><span class="r8">}</span><span class="r11">&quot;</span><span class="r8">)</span><span class="r2">      </span></div>
+<div><span class="r2">  </span><span class="r3"> 8 </span><span class="r9">│   │   </span><span class="r7">return</span><span class="r5"> response</span><span class="r8">.</span><span class="r5">text</span><span class="r2">                                </span></div>
+<div><span class="r2">  </span><span class="r3"> 9 </span><span class="r2">                                                            </span></div>
 <div><span class="r2">  </span><span class="r3">10 </span><span class="r2">                                                            </span></div>
-<div><span class="r2">  </span><span class="r3">11 </span><span class="r2">                                                            </span></div>
-<div><span class="r2">  </span><span class="r3">12 </span><span class="r7">@asynccontextmanager</span><span class="r2">                                        </span></div>
-<div><span class="r2">  </span><span class="r3">13 </span><span class="r6">async</span><span class="r5"> </span><span class="r6">def</span><span class="r5"> </span><span class="r7">book_client</span><span class="r5">(</span><span class="r4"><em></span><span class="r5">args, </span><span class="r4"></em><em></span><span class="r5">kwargs):</span><span class="r2">                     </span></div>
-<div><span class="r2">  </span><span class="r3">14 </span><span class="r8">│   </span><span class="r6">async</span><span class="r5"> </span><span class="r6">with</span><span class="r5"> BookClient(</span><span class="r4"></em></span><span class="r5">args, </span><span class="r4">**</span><span class="r5">kwargs) </span><span class="r6">as</span><span class="r5"> client:</span><span class="r2">       </span></div>
-<div><span class="r2">  </span><span class="r3">15 </span><span class="r8">│   │   </span><span class="r6">yield</span><span class="r5"> client</span><span class="r2">                                        </span></div>
-<div><span class="r2">  </span><span class="r3">16 </span><span class="r2">                                                            </span></div>
+<div><span class="r2">  </span><span class="r3">11 </span><span class="r10">@asynccontextmanager</span><span class="r2">                                        </span></div>
+<div><span class="r2">  </span><span class="r3">12 </span><span class="r7">async</span><span class="r5"> </span><span class="r7">def</span><span class="r5"> </span><span class="r10">book_client</span><span class="r8">(<em></span><span class="r5">args</span><span class="r8">,</span><span class="r5"> </span><span class="r8"></em><em></span><span class="r5">kwargs</span><span class="r8">):</span><span class="r2">                     </span></div>
+<div><span class="r2">  </span><span class="r3">13 </span><span class="r9">│   </span><span class="r7">async</span><span class="r5"> </span><span class="r7">with</span><span class="r5"> BookClient</span><span class="r8">(</em></span><span class="r5">args</span><span class="r8">,</span><span class="r5"> </span><span class="r8">**</span><span class="r5">kwargs</span><span class="r8">)</span><span class="r5"> </span><span class="r7">as</span><span class="r5"> client</span><span class="r8">:</span><span class="r2">       </span></div>
+<div><span class="r2">  </span><span class="r3">14 </span><span class="r9">│   │   </span><span class="r7">yield</span><span class="r5"> client</span><span class="r2">                                        </span></div>
+<div><span class="r2">  </span><span class="r3">15 </span><span class="r2">                                                            </span></div>
 <div><span class="r1"></span><span class="r1">                                                                 </span></div>
                     </div>
                 </div>
@@ -1134,8 +1135,7 @@ Global options:
 <span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span>
 <span class="kn">from</span> <span class="nn">rich.syntax</span> <span class="kn">import</span> <span class="n">Syntax</span>
 
-<span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">from contextlib import asynccontextmanager</span>
+<span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;from contextlib import asynccontextmanager</span>
 <span class="s2">import httpx</span>
 
 
@@ -1152,10 +1152,10 @@ Global options:
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">devnull</span><span class="p">:</span>
-    <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">devnull</span><span class="p">)</span>
-    <span class="n">renderable</span> <span class="o">=</span> <span class="n">Syntax</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">line_numbers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent_guides</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">renderable</span><span class="p">)</span>
-<span class="n">svg</span> <span class="o">=</span> <span class="n">console</span><span class="o">.</span><span class="n">export_svg</span><span class="p">(</span><span class="n">clear</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">devnull</span><span class="p">,</span> <span class="n">markup</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">renderable</span> <span class="o">=</span> <span class="n">Syntax</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="n">line_numbers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent_guides</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="s2">&quot;material&quot;</span><span class="p">)</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">renderable</span><span class="p">,</span> <span class="n">markup</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">svg</span> <span class="o">=</span> <span class="n">console</span><span class="o">.</span><span class="n">export_svg</span><span class="p">()</span>
 <span class="n">output_html</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
 </code></pre></div>
 </div>
