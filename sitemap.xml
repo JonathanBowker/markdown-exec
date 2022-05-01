@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/pycon/</loc>
+         <lastmod>2022-05-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/python/</loc>
          <lastmod>2022-05-01</lastmod>
          <changefreq>daily</changefreq>
