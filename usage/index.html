@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#html-vs-markdown" class="md-skip">
+        <a href="#usage" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +85,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Markdown Exec" class="md-header__button md-logo" aria-label="Markdown Exec" data-md-component="logo">
       
@@ -185,14 +187,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
@@ -286,7 +282,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -426,80 +428,63 @@
     
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Usage
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Usage
-      </a>
+      
+      
       
         
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Usage</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+            
+              
   
   
   
+    <li class="md-nav__item">
+      <a href="shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#html-vs-markdown" class="md-nav__link">
-    HTML vs. Markdown
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#render-the-source-code-as-well" class="md-nav__link">
-    Render the source code as well
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#change-the-titles-of-tabs" class="md-nav__link">
-    Change the titles of tabs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-options" class="md-nav__link">
-    Additional options
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python-console-code" class="md-nav__link">
-    Python console code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literate-markdown" class="md-nav__link">
-    Literate Markdown
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -617,6 +602,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../reference/markdown_exec/formatters/base/" class="md-nav__link">
+        base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/markdown_exec/formatters/bash/" class="md-nav__link">
+        bash
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/markdown_exec/formatters/console/" class="md-nav__link">
+        console
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference/markdown_exec/formatters/markdown/" class="md-nav__link">
         markdown
       </a>
@@ -647,6 +674,20 @@
     <li class="md-nav__item">
       <a href="../reference/markdown_exec/formatters/python/" class="md-nav__link">
         python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/markdown_exec/formatters/sh/" class="md-nav__link">
+        sh
       </a>
     </li>
   
@@ -809,6 +850,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -838,15 +881,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-options" class="md-nav__link">
-    Additional options
+  <a href="#wrap-result-in-a-code-block" class="md-nav__link">
+    Wrap result in a code block
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#python-console-code" class="md-nav__link">
-    Python console code
+  <a href="#additional-options" class="md-nav__link">
+    Additional options
   </a>
   
 </li>
@@ -870,14 +913,13 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/pawamoy/markdown-exec/edit/master/docs/usage.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/pawamoy/markdown-exec/edit/master/docs/usage/index.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-  <h1>Usage</h1>
-
+<h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¤</a></h1>
 <h2 id="html-vs-markdown">HTML vs. Markdown<a class="headerlink" href="#html-vs-markdown" title="Permanent link">¤</a></h2>
 <p>By default, Markdown Exec will render what you print as Markdown.
 If you want to skip rendering, to inject HTML directly,
@@ -1069,8 +1111,8 @@ print(&quot;I&#39;m the result!&quot;)
 </div>
 </div>
 <hr />
-<p><strong>Console</strong> <small>(best used with actual session syntax like <code>pycon</code>,
-details at <a href="#python-console-code">Python console code</a>)</small>:</p>
+<p><strong>Console</strong> <small>(best used with actual session syntax like
+<a href="python/#python-console-code"><code>pycon</code></a> or <a href="shell/#console"><code>console</code></a>)</small>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="exec-21--__tabbed_14_1" name="exec-21--__tabbed_14" type="radio" /><input id="exec-21--__tabbed_14_2" name="exec-21--__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="exec-21--__tabbed_14_1">Markdown</label><label for="exec-21--__tabbed_14_2">Rendered</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1192,6 +1234,39 @@ to tabbed-right and inversely without having to switch the titles as well.</p>
 <p class="admonition-title">Limitation</p>
 <p>Changing the title for only one tab is not supported.</p>
 </div>
+<h2 id="wrap-result-in-a-code-block">Wrap result in a code block<a class="headerlink" href="#wrap-result-in-a-code-block" title="Permanent link">¤</a></h2>
+<p>You can wrap the result in a code block by specifying a code block language:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="exec-27--__tabbed_17_1" name="exec-27--__tabbed_17" type="radio" /><input id="exec-27--__tabbed_17_2" name="exec-27--__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="exec-27--__tabbed_17_1">Markdown</label><label for="exec-27--__tabbed_17_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```console exec=&quot;1&quot; result=&quot;json&quot;
+$ pdm info --env
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;implementation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cpython&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;implementation_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.11.0a7&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;os_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;posix&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;platform_machine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x86_64&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;platform_release&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5.17.5-arch1-1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;platform_system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;platform_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#1 SMP PREEMPT Wed, 27 Apr 2022 20:56:11 +0000&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;python_full_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.11.0a7&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;platform_python_implementation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CPython&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;python_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.11&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;sys_platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linux&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Limitation</p>
+<p>Wrapping the result is not possible when HTML output is enabled,
+nor when source and output are concatenated with the "console" style.</p>
+</div>
 <h2 id="additional-options">Additional options<a class="headerlink" href="#additional-options" title="Permanent link">¤</a></h2>
 <p>If you are using <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>,
 you are probably familiar with the <code>title</code> option on code blocks:</p>
@@ -1203,7 +1278,7 @@ setup(...)
 <p>Markdown Exec will add back these unrecognized options
 when rendering the source, so you can keep using them normally.</p>
 <p>Example:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="exec-27--__tabbed_17_1" name="exec-27--__tabbed_17" type="radio" /><input id="exec-27--__tabbed_17_2" name="exec-27--__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="exec-27--__tabbed_17_1">Markdown</label><label for="exec-27--__tabbed_17_2">Rendered</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="exec-29--__tabbed_18_1" name="exec-29--__tabbed_18" type="radio" /><input id="exec-29--__tabbed_18_2" name="exec-29--__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="exec-29--__tabbed_18_1">Markdown</label><label for="exec-29--__tabbed_18_2">Rendered</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>```python exec=&quot;1&quot; source=&quot;above&quot; title=&quot;source.py&quot;
@@ -1218,53 +1293,6 @@ print(&quot;I&#39;m the result!&quot;)
 </div>
 </div>
 </div>
-<h2 id="python-console-code">Python console code<a class="headerlink" href="#python-console-code" title="Permanent link">¤</a></h2>
-<p>Code blocks syntax-highlighted with the <code>pycon</code> identifier are also supported.
-These code blocks will be pre-processed to keep only the lines
-starting with <code>&gt;&gt;&gt;</code>, and the chevrons (prompt) will be removed from these lines,
-so we can execute them.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="exec-29--__tabbed_18_1" name="exec-29--__tabbed_18" type="radio" /><input id="exec-29--__tabbed_18_2" name="exec-29--__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="exec-29--__tabbed_18_1">Markdown</label><label for="exec-29--__tabbed_18_2">Rendered</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>```pycon exec=&quot;1&quot; source=&quot;console&quot;
-&gt;&gt;&gt; print(&quot;I&#39;m the result!&quot;)
-I&#39;m not the result...
-```
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
-<span class="go">I&#39;m the result!</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<p>It also means that multiple blocks of instructions will be concatenated,
-as well as their output:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="exec-31--__tabbed_19_1" name="exec-31--__tabbed_19" type="radio" /><input id="exec-31--__tabbed_19_2" name="exec-31--__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="exec-31--__tabbed_19_1">Markdown</label><label for="exec-31--__tabbed_19_2">Rendered</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>```pycon exec=&quot;1&quot; source=&quot;console&quot;
-&gt;&gt;&gt; name = &quot;Baron&quot;
-&gt;&gt;&gt; print(name)
-Baron
-&gt;&gt;&gt; age = &quot;???&quot;
-&gt;&gt;&gt; print(age)
-???
-```
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Baron&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;???&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
-<span class="go">Baron</span>
-<span class="go">???</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 <h2 id="literate-markdown">Literate Markdown<a class="headerlink" href="#literate-markdown" title="Permanent link">¤</a></h2>
 <p>With this extension, it is also possible to write "literate programming" Markdown.</p>
 <p>From <a href="https://en.wikipedia.org/wiki/Literate_programming">Wikipedia</a>:</p>
@@ -1275,7 +1303,7 @@ Baron
 </blockquote>
 <p>We effectively support executing multiple <em>nested</em> code blocks to generate complex output.
 That makes for a very meta-markdown markup:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="exec-33--__tabbed_20_1" name="exec-33--__tabbed_20" type="radio" /><input id="exec-33--__tabbed_20_2" name="exec-33--__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="exec-33--__tabbed_20_1">Source</label><label for="exec-33--__tabbed_20_2">Result</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="exec-31--__tabbed_19_1" name="exec-31--__tabbed_19" type="radio" /><input id="exec-31--__tabbed_19_2" name="exec-31--__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="exec-31--__tabbed_19_1">Source</label><label for="exec-31--__tabbed_19_2">Result</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>```md exec=&quot;1&quot; source=&quot;material-block&quot; title=&quot;Markdown link&quot;
@@ -1340,13 +1368,13 @@ Check out the source here: <a href="https://github.com/pawamoy/markdown-exec/blo
       
       
         
-        <a href="../gallery/" class="md-footer__link md-footer__link--next" aria-label="Next: Gallery" rel="next">
+        <a href="python/" class="md-footer__link md-footer__link--next" aria-label="Next: Python" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Gallery
+              Python
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1398,7 +1426,7 @@ Check out the source here: <a href="https://github.com/pawamoy/markdown-exec/blo
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>

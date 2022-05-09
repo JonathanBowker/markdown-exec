@@ -36,11 +36,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pawamoy.github.io/markdown-exec/usage/</loc>
-         <lastmod>2022-05-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>None</loc>
          <lastmod>2022-05-09</lastmod>
          <changefreq>daily</changefreq>
@@ -66,6 +61,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/formatters/base/</loc>
+         <lastmod>2022-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/formatters/bash/</loc>
+         <lastmod>2022-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/formatters/console/</loc>
+         <lastmod>2022-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/formatters/markdown/</loc>
          <lastmod>2022-05-09</lastmod>
          <changefreq>daily</changefreq>
@@ -81,7 +91,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pawamoy.github.io/markdown-exec/snippets/literate_markdown/</loc>
+         <loc>https://pawamoy.github.io/markdown-exec/reference/markdown_exec/formatters/sh/</loc>
+         <lastmod>2022-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pawamoy.github.io/markdown-exec/usage/</loc>
+         <lastmod>2022-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pawamoy.github.io/markdown-exec/usage/python/</loc>
+         <lastmod>2022-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pawamoy.github.io/markdown-exec/usage/shell/</loc>
          <lastmod>2022-05-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
