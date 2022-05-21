@@ -481,6 +481,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/tree/" class="md-nav__link">
+        Tree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -696,8 +710,36 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formatters/tree/" class="md-nav__link">
+        tree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logger/" class="md-nav__link">
+        logger
+      </a>
     </li>
   
 
@@ -1041,11 +1083,11 @@
 
 
 
-<h2 id="markdown_exec.rendering._IdPrependingTreeprocessor" class="doc doc-heading">
+<h2 class="doc doc-heading" id="markdown_exec.rendering._IdPrependingTreeprocessor">
 <code class="highlight language-python"><span class="n">_IdPrependingTreeprocessor</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">id_prefix</span><span class="p">)</span></code>
 
 
-<a href="#markdown_exec.rendering._IdPrependingTreeprocessor" class="headerlink" title="Permanent link">¤</a></h2>
+<a class="headerlink" href="#markdown_exec.rendering._IdPrependingTreeprocessor" title="Permanent link">¤</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -1094,11 +1136,11 @@
 
 
 
-<h2 id="markdown_exec.rendering._MarkdownConverter" class="doc doc-heading">
+<h2 class="doc doc-heading" id="markdown_exec.rendering._MarkdownConverter">
 <code class="highlight language-python"><span class="n">_MarkdownConverter</span><span class="p">()</span></code>
 
 
-<a href="#markdown_exec.rendering._MarkdownConverter" class="headerlink" title="Permanent link">¤</a></h2>
+<a class="headerlink" href="#markdown_exec.rendering._MarkdownConverter" title="Permanent link">¤</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -1141,11 +1183,11 @@
 
 
 
-<h3 id="markdown_exec.rendering._MarkdownConverter.convert" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">stash</span><span class="p">)</span></code>
+<h3 class="doc doc-heading" id="markdown_exec.rendering._MarkdownConverter.convert">
+<code class="highlight language-python"><span class="n">convert</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">stash</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
-<a href="#markdown_exec.rendering._MarkdownConverter.convert" class="headerlink" title="Permanent link">¤</a></h3>
+<a class="headerlink" href="#markdown_exec.rendering._MarkdownConverter.convert" title="Permanent link">¤</a></h3>
 
 
     <div class="doc doc-contents ">
@@ -1176,11 +1218,11 @@
         <tr>
           <td><code>stash</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
           </td>
           <td><p>An HTML stash.</p></td>
           <td>
-              <em>required</em>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
@@ -1234,7 +1276,7 @@
 <span class="normal">174</span>
 <span class="normal">175</span>
 <span class="normal">176</span>
-<span class="normal">177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">stash</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Markup</span><span class="p">:</span>
+<span class="normal">177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">stash</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markup</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Convert Markdown text to safe HTML.</span>
 
 <span class="sd">    Parameters:</span>
@@ -1259,7 +1301,7 @@
         <span class="n">md</span><span class="o">.</span><span class="n">treeprocessors</span><span class="p">[</span><span class="n">_IdPrependingTreeprocessor</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">id_prefix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 
     <span class="c1"># restore html from stash</span>
-    <span class="k">for</span> <span class="n">placeholder</span><span class="p">,</span> <span class="n">stashed</span> <span class="ow">in</span> <span class="n">stash</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">placeholder</span><span class="p">,</span> <span class="n">stashed</span> <span class="ow">in</span> <span class="p">(</span><span class="n">stash</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">converted</span> <span class="o">=</span> <span class="n">converted</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">placeholder</span><span class="p">,</span> <span class="n">stashed</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">Markup</span><span class="p">(</span><span class="n">converted</span><span class="p">)</span>
@@ -1288,11 +1330,11 @@
 
 
 
-<h2 id="markdown_exec.rendering.add_source" class="doc doc-heading">
+<h2 class="doc doc-heading" id="markdown_exec.rendering.add_source">
 <code class="highlight language-python"><span class="n">add_source</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span></code>
 
 
-<a href="#markdown_exec.rendering.add_source" class="headerlink" title="Permanent link">¤</a></h2>
+<a class="headerlink" href="#markdown_exec.rendering.add_source" title="Permanent link">¤</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -1512,11 +1554,11 @@
 
 
 
-<h2 id="markdown_exec.rendering.code_block" class="doc doc-heading">
+<h2 class="doc doc-heading" id="markdown_exec.rendering.code_block">
 <code class="highlight language-python"><span class="n">code_block</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
 
 
-<a href="#markdown_exec.rendering.code_block" class="headerlink" title="Permanent link">¤</a></h2>
+<a class="headerlink" href="#markdown_exec.rendering.code_block" title="Permanent link">¤</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -1624,11 +1666,11 @@
 
 
 
-<h2 id="markdown_exec.rendering.tabbed" class="doc doc-heading">
+<h2 class="doc doc-heading" id="markdown_exec.rendering.tabbed">
 <code class="highlight language-python"><span class="n">tabbed</span><span class="p">(</span><span class="o">*</span><span class="n">tabs</span><span class="p">)</span></code>
 
 
-<a href="#markdown_exec.rendering.tabbed" class="headerlink" title="Permanent link">¤</a></h2>
+<a class="headerlink" href="#markdown_exec.rendering.tabbed" title="Permanent link">¤</a></h2>
 
 
     <div class="doc doc-contents ">

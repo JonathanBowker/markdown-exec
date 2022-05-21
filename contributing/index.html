@@ -481,6 +481,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/tree/" class="md-nav__link">
+        Tree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -692,8 +706,36 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/markdown_exec/formatters/tree/" class="md-nav__link">
+        tree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/markdown_exec/logger/" class="md-nav__link">
+        logger
+      </a>
     </li>
   
 
@@ -990,21 +1032,20 @@ Every little bit helps, and credit will always be given.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> markdown-exec
 make setup
 </code></pre></div>
-<p>!!! note
-    If it fails for some reason,
-    you'll need to install
-    <a href="https://github.com/pdm-project/pdm">PDM</a>
-    manually.</p>
-<div class="highlight"><pre><span></span><code>You can install it with:
-
-```bash
-python3 -m pip install --user pipx
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>
+If it fails for some reason,
+you'll need to install
+<a href="https://github.com/pdm-project/pdm">PDM</a>
+manually.</p>
+<p>You can install it with:</p>
+<div class="highlight"><pre><span></span><code>python3 -m pip install --user pipx
 pipx install pdm
-```
-
-Now you can try running `make setup` again,
-or simply `pdm install`.
 </code></pre></div>
+<p>Now you can try running <code>make setup</code> again,
+or simply <code>pdm install</code>.</p>
+</div>
 <p>You now have the dependencies installed.</p>
 <p>You can run the application with <code>pdm run markdown-exec [ARGS...]</code>.</p>
 <p>Run <code>make help</code> to see all the available actions!</p>

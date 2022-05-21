@@ -481,6 +481,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../usage/tree/" class="md-nav__link">
+        Tree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -742,8 +756,36 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree/" class="md-nav__link">
+        tree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/" class="md-nav__link">
+        logger
+      </a>
     </li>
   
 
@@ -957,15 +999,16 @@
 
 
 
+
   <div class="doc doc-object doc-function">
 
 
 
-<h2 id="markdown_exec.formatters.base.base_format" class="doc doc-heading">
+<h2 class="doc doc-heading" id="markdown_exec.formatters.base.base_format">
 <code class="highlight language-python"><span class="n">base_format</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">md</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
 
 
-<a href="#markdown_exec.formatters.base.base_format" class="headerlink" title="Permanent link">¤</a></h2>
+<a class="headerlink" href="#markdown_exec.formatters.base.base_format" title="Permanent link">¤</a></h2>
 
 
     <div class="doc doc-contents ">
@@ -1096,10 +1139,7 @@
 
         <details class="quote">
           <summary>Source code in <code>markdown_exec/formatters/base.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
@@ -1135,7 +1175,14 @@
 <span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span>
-<span class="normal">53</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">base_format</span><span class="p">(</span>  <span class="c1"># noqa: WPS231</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">base_format</span><span class="p">(</span>  <span class="c1"># noqa: WPS231</span>
     <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">run</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
     <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1164,7 +1211,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">markdown</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
     <span class="n">extra</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extra&quot;</span><span class="p">,</span> <span class="p">{})</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Execution of </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2"> code block exited with non-zero status&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">markdown</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
     <span class="n">stash</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">if</span> <span class="n">html</span><span class="p">:</span>
         <span class="n">placeholder</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid4</span><span class="p">())</span>
