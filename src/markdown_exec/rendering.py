@@ -7,7 +7,11 @@ from xml.etree.ElementTree import Element
 
 from markdown import Markdown
 from markdown.treeprocessors import Treeprocessor
+from markdown_exec.extension import InsertHeadings
 from markupsafe import Markup
+import re
+import copy
+from markdown.extensions.toc import TocTreeprocessor
 
 
 def code_block(language: str, code: str, **options: str) -> str:
@@ -127,13 +131,43 @@ class _IdPrependingTreeprocessor(Treeprocessor):
                     el.set("for", self.id_prefix + for_attr)
 
 
-def _mimic(md: Markdown) -> Markdown:
+# code taken from mkdocstrings, credits to @oprypin
+class _HeadingReportingTreeprocessor(Treeprocessor):
+    """Records the heading elements encountered in the document."""
+
+    name = "mkdocstrings_headings_list"
+    regex = re.compile("[Hh][1-6]")
+
+    headings: list[Element]
+    """The list (the one passed in the initializer) that is used to record the heading elements (by appending to it)."""
+
+    def __init__(self, md: Markdown, headings: list[Element]):
+        super().__init__(md)
+        self.headings = headings
+
+    def run(self, root: Element):
+        for el in root.iter():
+            if self.regex.fullmatch(el.tag):
+                el = copy.copy(el)
+                # 'toc' extension's first pass (which we require to build heading stubs/ids) also edits the HTML.
+                # Undo the permalink edit so we can pass this heading to the outer pass of the 'toc' extension.
+                if len(el) > 0 and el[-1].get("class") == self.md.treeprocessors["toc"].permalink_class:  # noqa: WPS507
+                    del el[-1]  # noqa: WPS420
+                self.headings.append(el)
+
+
+def _mimic(md: Markdown, headings: list[Element]) -> Markdown:
     new_md = Markdown()  # noqa: WPS442
     new_md.registerExtensions(md.registeredExtensions + ["tables", "md_in_html"], {})
     new_md.treeprocessors.register(
         _IdPrependingTreeprocessor(md, ""),
         _IdPrependingTreeprocessor.name,
         priority=4,  # right after 'toc' (needed because that extension adds ids to headers)
+    )
+    new_md.treeprocessors.register(
+        _HeadingReportingTreeprocessor(md, headings),
+        _HeadingReportingTreeprocessor.name,
+        priority=1,  # Close to the end.
     )
     return new_md
 
@@ -146,9 +180,10 @@ class _MarkdownConverter:
         self._md_stack: list[Markdown] = []
         self._counter: int = 0
         self._level: int = 0
+        self._headings: list[Element] = []
 
     def setup(self, md: Markdown) -> None:
-        if not self._md_ref:
+        if self._md_ref is not md:
             self._md_ref = md
 
     def convert(self, text: str, stash: dict[str, str] | None = None) -> Markup:
@@ -177,16 +212,32 @@ class _MarkdownConverter:
 
         # restore html from stash
         for placeholder, stashed in (stash or {}).items():
-            converted = converted.replace(placeholder, stashed)
+            converted = Markup(converted.replace(placeholder, stashed))
 
-        return Markup(converted)
+        # pass headings to upstream conversion layer
+        self._md_ref.treeprocessors[InsertHeadings.name].headings[converted] = self.headings
+
+        return converted
+
+    @property
+    def headings(self) -> list[Element]:
+        headings = self._headings
+        self._headings = []
+        return headings
+
+    @property
+    def html_headings(self) -> str:
+        headings = []
+        for heading in self.headings:
+            headings.append(f'<{heading.tag} id="{heading.attrib["id"]}">{heading.text}</{heading.tag}>')
+        return "\n".join(headings)
 
     @property
     def _md(self) -> Markdown:
         try:
             return self._md_stack[self._level]
         except IndexError:
-            self._md_stack.append(_mimic(self._md_ref))
+            self._md_stack.append(_mimic(self._md_ref, self._headings))
             return self._md
 
 

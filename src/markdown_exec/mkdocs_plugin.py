@@ -1,6 +1,7 @@
 """This module contains an optional plugin for MkDocs."""
 
 import logging
+from markdown_exec.extension import MarkdownExecExtension
 
 from mkdocs.config import Config, config_options
 from mkdocs.plugins import BasePlugin
@@ -33,7 +34,7 @@ class MarkdownExecPlugin(BasePlugin):
 
     def on_config(self, config: Config, **kwargs) -> Config:  # noqa: D102
         self.languages = self.config["languages"]
-
+        config["markdown_extensions"].append(MarkdownExecExtension())
         mdx_configs = config.setdefault("mdx_configs", {})
         superfences = mdx_configs.setdefault("pymdownx.superfences", {})
         custom_fences = superfences.setdefault("custom_fences", [])
