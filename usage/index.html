@@ -981,6 +981,28 @@
 If you want to skip rendering, to inject HTML directly,
 you can set the <code>html</code> option to true.</p>
 <p>HTML Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-10--__tabbed_1_1" name="exec-10--__tabbed_1" type="radio" /><input id="exec-10--__tabbed_1_2" name="exec-10--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-10--__tabbed_1_1">Markdown</label><label for="exec-10--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>System information:
+
+```python exec=&quot;true&quot; html=&quot;true&quot;
+import platform
+
+print(
+    f&quot;&quot;&quot;
+    &lt;ul&gt;
+    &lt;li&gt;machine: &lt;code&gt;{platform.machine()}&lt;/code&gt;&lt;/li&gt;
+    &lt;li&gt;version: &lt;code&gt;{platform.version()}&lt;/code&gt;&lt;/li&gt;
+    &lt;li&gt;platform: &lt;code&gt;{platform.platform()}&lt;/code&gt;&lt;/li&gt;
+    &lt;li&gt;system: &lt;code&gt;{platform.system()}&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &quot;&quot;&quot;
+)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>System information:</p>
 <p>
     <ul>
@@ -991,7 +1013,35 @@ you can set the <code>html</code> option to true.</p>
     </ul>
     
 </p>
+</div>
+</div>
+</div>
 <p>Markdown Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-11--__tabbed_1_1" name="exec-11--__tabbed_1" type="radio" /><input id="exec-11--__tabbed_1_2" name="exec-11--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-11--__tabbed_1_1">Markdown</label><label for="exec-11--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>System information:
+
+```python exec=&quot;true&quot;
+import platform
+from textwrap import dedent
+
+print(
+    # we must dedent, otherwise Markdown
+    # will render it as a code block!
+    dedent(
+        f&quot;&quot;&quot;
+        <span class="k">-</span> machine: <span class="sb">`{platform.machine()}`</span>
+        <span class="k">-</span> version: <span class="sb">`{platform.version()}`</span>
+        <span class="k">-</span> platform: <span class="sb">`{platform.platform()}`</span>
+        <span class="k">-</span> system: <span class="sb">`{platform.system()}`</span>
+        &quot;&quot;&quot;
+    )
+)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>System information:</p>
 <ul>
 <li>machine: <code>x86_64</code></li>
@@ -999,6 +1049,9 @@ you can set the <code>html</code> option to true.</p>
 <li>platform: <code>Linux-6.0.8-arch1-1-x86_64-with-glibc2.35</code></li>
 <li>system: <code>Linux</code></li>
 </ul>
+</div>
+</div>
+</div>
 <h2 id="render-the-source-code-as-well">Render the source code as well<a class="headerlink" href="#render-the-source-code-as-well" title="Permanent link">¤</a></h2>
 <p>It's possible to render both the result of the executed code block
 <em>and</em> the code block itself. For this, use the <code>source</code> option
@@ -1012,25 +1065,126 @@ with one of the following values:</p>
 <li><code>console</code>: The source and result are concatenated in a single code block, like an interactive console session.</li>
 </ul>
 <p><strong>Source above:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-13--__tabbed_1_1" name="exec-13--__tabbed_1" type="radio" /><input id="exec-13--__tabbed_1_2" name="exec-13--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-13--__tabbed_1_1">Markdown</label><label for="exec-13--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;true&quot; source=&quot;above&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>I'm the result!</p>
+</div>
+</div>
+</div>
 <hr />
 <p><strong>Source below:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-15--__tabbed_1_1" name="exec-15--__tabbed_1" type="radio" /><input id="exec-15--__tabbed_1_2" name="exec-15--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-15--__tabbed_1_1">Markdown</label><label for="exec-15--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;true&quot; source=&quot;below&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>I'm the result!</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <hr />
 <p><strong>Material block:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-17--__tabbed_1_1" name="exec-17--__tabbed_1" type="radio" /><input id="exec-17--__tabbed_1_2" name="exec-17--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-17--__tabbed_1_1">Markdown</label><label for="exec-17--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;true&quot; source=&quot;material-block&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" style="margin-top: 0;">
 <p>I'm the result!</p>
+</div>
+</div>
+</div>
+</div>
 <hr />
 <p><strong>Tabbed on the left:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-19--__tabbed_1_1" name="exec-19--__tabbed_1" type="radio" /><input id="exec-19--__tabbed_1_2" name="exec-19--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-19--__tabbed_1_1">Markdown</label><label for="exec-19--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;true&quot; source=&quot;tabbed-left&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-20--__tabbed_1_1" name="exec-20--__tabbed_1" type="radio" /><input id="exec-20--__tabbed_1_2" name="exec-20--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-20--__tabbed_1_1">Source</label><label for="exec-20--__tabbed_1_2">Result</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>I'm the result!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <hr />
 <p><strong>Tabbed on the right:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-21--__tabbed_1_1" name="exec-21--__tabbed_1" type="radio" /><input id="exec-21--__tabbed_1_2" name="exec-21--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-21--__tabbed_1_1">Markdown</label><label for="exec-21--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;true&quot; source=&quot;tabbed-right&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-22--__tabbed_1_1" name="exec-22--__tabbed_1" type="radio" /><input id="exec-22--__tabbed_1_2" name="exec-22--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-22--__tabbed_1_1">Result</label><label for="exec-22--__tabbed_1_2">Source</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>I'm the result!</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <hr />
 <p><strong>Console</strong> <small>(best used with actual session syntax like
 <a href="python/#python-console-code"><code>pycon</code></a> or <a href="shell/#console"><code>console</code></a>)</small>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-23--__tabbed_1_1" name="exec-23--__tabbed_1" type="radio" /><input id="exec-23--__tabbed_1_2" name="exec-23--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-23--__tabbed_1_1">Markdown</label><label for="exec-23--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```pycon exec=&quot;true&quot; source=&quot;console&quot;
+&gt;&gt;&gt; print(&quot;I&#39;m the result!&quot;)
+I&#39;m not the result...
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
 <span class="go">I&#39;m the result!</span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="hiding-lines-from-the-source">Hiding lines from the source<a class="headerlink" href="#hiding-lines-from-the-source" title="Permanent link">¤</a></h2>
 <p>Every line that contains the string <code>markdown-exec: hide</code> will be hidden from the
 displayed source.</p>
@@ -1044,6 +1198,8 @@ print(&quot;&lt;hr&gt;&quot;)  # markdown-exec: hide
 </code></pre></div>
 </div>
 <div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>Hello World!</p>
 <hr>
 </div>
@@ -1053,10 +1209,60 @@ print(&quot;&lt;hr&gt;&quot;)  # markdown-exec: hide
 <p>In the previous example, we didn't specify any title for tabs,
 so Markdown Exec used "Source" and "Result" by default.
 You can customize the titles with the <code>tabs</code> option:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-26--__tabbed_1_1" name="exec-26--__tabbed_1" type="radio" /><input id="exec-26--__tabbed_1_2" name="exec-26--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-26--__tabbed_1_1">Markdown</label><label for="exec-26--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;1&quot; source=&quot;tabbed-left&quot; tabs=&quot;Source code|Output&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-27--__tabbed_1_1" name="exec-27--__tabbed_1" type="radio" /><input id="exec-27--__tabbed_1_2" name="exec-27--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-27--__tabbed_1_1">Source code</label><label for="exec-27--__tabbed_1_2">Output</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>I'm the result!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>As you can see, titles are separated with a pipe <code>|</code>. Both titles are stripped
 so you can add space around the pipe. If you need to use that character in a title,
 simply escape it with <code>\|</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-28--__tabbed_1_1" name="exec-28--__tabbed_1" type="radio" /><input id="exec-28--__tabbed_1_2" name="exec-28--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-28--__tabbed_1_1">Markdown</label><label for="exec-28--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;1&quot; source=&quot;tabbed-left&quot; tabs=&quot;OR operator: a \|\| b | Boolean matrix&quot;
+print()
+print(&quot;a   | b   | a \\|\\| b&quot;)
+print(&quot;--- | --- | ---&quot;)
+for a in (True, False):
+    for b in (True, False):
+        print(f&quot;{a} | {b} | {a or b}&quot;)
+print()
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-29--__tabbed_1_1" name="exec-29--__tabbed_1" type="radio" /><input id="exec-29--__tabbed_1_2" name="exec-29--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-29--__tabbed_1_1">OR operator: a || b</label><label for="exec-29--__tabbed_1_2">Boolean matrix</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a   | b   | a </span><span class="se">\\</span><span class="s2">|</span><span class="se">\\</span><span class="s2">| b&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- | --- | ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -1088,6 +1294,12 @@ simply escape it with <code>\|</code>:</p>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <code>tabs</code> option <strong><em>always</em></strong> expects the "Source" tab title first,
@@ -1100,6 +1312,15 @@ to tabbed-right and inversely without having to switch the titles as well.</p>
 </div>
 <h2 id="wrap-result-in-a-code-block">Wrap result in a code block<a class="headerlink" href="#wrap-result-in-a-code-block" title="Permanent link">¤</a></h2>
 <p>You can wrap the result in a code block by specifying a code block language:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-30--__tabbed_1_1" name="exec-30--__tabbed_1" type="radio" /><input id="exec-30--__tabbed_1_2" name="exec-30--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-30--__tabbed_1_1">Markdown</label><label for="exec-30--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```console exec=&quot;1&quot; result=&quot;json&quot;
+$ pdm info --env
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;implementation_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cpython&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;implementation_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.8.13&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1114,6 +1335,9 @@ to tabbed-right and inversely without having to switch the titles as well.</p>
 <span class="w">  </span><span class="nt">&quot;sys_platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linux&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Limitation</p>
 <p>Wrapping the result is not possible when HTML output is enabled,
@@ -1130,7 +1354,21 @@ setup(...)
 <p>Markdown Exec will add back these unrecognized options
 when rendering the source, so you can keep using them normally.</p>
 <p>Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-32--__tabbed_1_1" name="exec-32--__tabbed_1" type="radio" /><input id="exec-32--__tabbed_1_2" name="exec-32--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-32--__tabbed_1_1">Markdown</label><label for="exec-32--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;1&quot; source=&quot;above&quot; title=&quot;source.py&quot;
+print(&quot;I&#39;m the result!&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">source.py</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>I'm the result!</p>
+</div>
+</div>
+</div>
 <h2 id="literate-markdown">Literate Markdown<a class="headerlink" href="#literate-markdown" title="Permanent link">¤</a></h2>
 <p>With this extension, it is also possible to write "literate programming" Markdown.</p>
 <p>From <a href="https://en.wikipedia.org/wiki/Literate_programming">Wikipedia</a>:</p>
@@ -1141,7 +1379,23 @@ when rendering the source, so you can keep using them normally.</p>
 </blockquote>
 <p>We effectively support executing multiple <em>nested</em> code blocks to generate complex output.
 That makes for a very meta-markdown markup:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-34--__tabbed_1_1" name="exec-34--__tabbed_1" type="radio" /><input id="exec-34--__tabbed_1_2" name="exec-34--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-34--__tabbed_1_1">Source</label><label for="exec-34--__tabbed_1_2">Result</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```md exec=&quot;1&quot; source=&quot;material-block&quot; title=&quot;Markdown link&quot;
+[<span class="nt">Link to example.com</span>](<span class="na">https://example.com</span>)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Markdown link</span><pre><span></span><code>[<span class="nt">Link to example.com</span>](<span class="na">https://example.com</span>)
+</code></pre></div>
+<div class="result" style="margin-top: 0;">
 <p><a href="https://example.com">Link to example.com</a></p>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">So power, such meta</p>
 <p>The above example (both tabs) was entirely generated using <em>a literate code block in a literate code block</em> 🤯:</p>
