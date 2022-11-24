@@ -500,6 +500,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#regular-python" class="md-nav__link">
+    Regular Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-console-code" class="md-nav__link">
     Python console code
   </a>
@@ -948,6 +955,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#regular-python" class="md-nav__link">
+    Regular Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#python-console-code" class="md-nav__link">
     Python console code
   </a>
@@ -975,12 +989,31 @@
 
 
 <h1 id="python">Python<a class="headerlink" href="#python" title="Permanent link">¤</a></h1>
+<h2 id="regular-python">Regular Python<a class="headerlink" href="#regular-python" title="Permanent link">¤</a></h2>
+<p>Python code is executed in the current process,
+with isolated global variables.</p>
+<p>To capture the output of your code, Markdown Exec patches the <code>print</code>
+function so that it writes to a buffer instead of standard output.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-36--__tabbed_1_1" name="exec-36--__tabbed_1" type="radio" /><input id="exec-36--__tabbed_1_2" name="exec-36--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-36--__tabbed_1_1">Markdown</label><label for="exec-36--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>```python exec=&quot;1&quot;
+print(&quot;**Hello world!**&quot;)
+```
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><strong>Hello world!</strong></p>
+</div>
+</div>
+</div>
+<p>See the <a href="../../gallery">Gallery</a> for more complex examples.</p>
 <h2 id="python-console-code">Python console code<a class="headerlink" href="#python-console-code" title="Permanent link">¤</a></h2>
 <p>Code blocks syntax-highlighted with the <code>pycon</code> identifier are also supported.
 These code blocks will be pre-processed to keep only the lines
 starting with <code>&gt;&gt;&gt;</code>, and the chevrons (prompt) will be removed from these lines,
 so we can execute them.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-36--__tabbed_1_1" name="exec-36--__tabbed_1" type="radio" /><input id="exec-36--__tabbed_1_2" name="exec-36--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-36--__tabbed_1_1">Markdown</label><label for="exec-36--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-38--__tabbed_1_1" name="exec-38--__tabbed_1" type="radio" /><input id="exec-38--__tabbed_1_2" name="exec-38--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-38--__tabbed_1_1">Markdown</label><label for="exec-38--__tabbed_1_2">Rendered</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>```pycon exec=&quot;1&quot; source=&quot;console&quot;
@@ -990,7 +1023,7 @@ I&#39;m not the result...
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;&gt;&gt; print(&quot;I&#39;m the result!&quot;)</span>
 <span class="go">I&#39;m the result!</span>
 </code></pre></div>
 </div>
@@ -998,7 +1031,7 @@ I&#39;m not the result...
 </div>
 <p>It also means that multiple blocks of instructions will be concatenated,
 as well as their output:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-38--__tabbed_1_1" name="exec-38--__tabbed_1" type="radio" /><input id="exec-38--__tabbed_1_2" name="exec-38--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-38--__tabbed_1_1">Markdown</label><label for="exec-38--__tabbed_1_2">Rendered</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="exec-40--__tabbed_1_1" name="exec-40--__tabbed_1" type="radio" /><input id="exec-40--__tabbed_1_2" name="exec-40--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="exec-40--__tabbed_1_1">Markdown</label><label for="exec-40--__tabbed_1_2">Rendered</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>```pycon exec=&quot;1&quot; source=&quot;console&quot;
@@ -1012,10 +1045,10 @@ Baron
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Baron&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;???&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="go">&gt;&gt;&gt; name = &quot;Baron&quot;</span>
+<span class="go">&gt;&gt;&gt; print(name)</span>
+<span class="go">&gt;&gt;&gt; age = &quot;???&quot;</span>
+<span class="go">&gt;&gt;&gt; print(age)</span>
 <span class="go">Baron</span>
 <span class="go">???</span>
 </code></pre></div>

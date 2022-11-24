@@ -1118,8 +1118,7 @@
 
       <details class="quote">
         <summary>Source code in <code>markdown_exec/__init__.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 76</span>
-<span class="normal"> 77</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 77</span>
 <span class="normal"> 78</span>
 <span class="normal"> 79</span>
 <span class="normal"> 80</span>
@@ -1147,7 +1146,8 @@
 <span class="normal">102</span>
 <span class="normal">103</span>
 <span class="normal">104</span>
-<span class="normal">105</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">formatter</span><span class="p">(</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">formatter</span><span class="p">(</span>
     <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">css_class</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1310,7 +1310,8 @@
 <span class="normal">70</span>
 <span class="normal">71</span>
 <span class="normal">72</span>
-<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">validator</span><span class="p">(</span>
+<span class="normal">73</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">validator</span><span class="p">(</span>
     <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">inputs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">attrs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">md</span><span class="p">:</span> <span class="n">Markdown</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Validate code blocks inputs.</span>
@@ -1328,12 +1329,13 @@
     <span class="n">exec_value</span> <span class="o">=</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;exec&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">language</span> <span class="o">!=</span> <span class="s2">&quot;tree&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">exec_value</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">id_value</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="n">html_value</span> <span class="o">=</span> <span class="n">_to_bool</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;html&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">))</span>
     <span class="n">source_value</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="n">result_value</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;result&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="n">tabs_value</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;tabs&quot;</span><span class="p">,</span> <span class="s2">&quot;Source|Result&quot;</span><span class="p">)</span>
     <span class="n">tabs</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">_tabs_re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">tabs_value</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">options</span><span class="p">[</span><span class="s2">&quot;exec&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exec_value</span>
+    <span class="n">options</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_value</span>
     <span class="n">options</span><span class="p">[</span><span class="s2">&quot;html&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">html_value</span>
     <span class="n">options</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">source_value</span>
     <span class="n">options</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result_value</span>

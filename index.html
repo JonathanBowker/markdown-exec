@@ -1036,6 +1036,8 @@ configure a custom fence from Python:</p>
                     <span class="s2">&quot;validator&quot;</span><span class="p">:</span> <span class="n">validator</span><span class="p">,</span>
                     <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="n">formatter</span><span class="p">,</span>
                 <span class="p">}</span>
+                <span class="c1"># ...one fence for each language we support:</span>
+                <span class="c1"># bash, console, md, markdown, py, python, pycon, sh, tree</span>
             <span class="p">]</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -1050,6 +1052,8 @@ configure a custom fence from Python:</p>
 <span class="w">      </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span><span class="w"></span>
 <span class="w">      </span><span class="nt">validator</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:markdown_exec.validator</span><span class="w"></span>
 <span class="w">      </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:markdown_exec.formatter</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># ...one fence for each language we support:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># bash, console, md, markdown, py, python, pycon, sh, tree</span><span class="w"></span>
 </code></pre></div>
 <p>...or in MkDocs configuration file, as a plugin:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># mkdocs.yml</span><span class="w"></span>
@@ -1064,8 +1068,6 @@ print(&quot;Hello Markdown!&quot;)
 ```
 </code></pre></div>
 <p>The <code>exec</code> option will be true for every possible value except <code>0</code>, <code>no</code>, <code>off</code> and <code>false</code> (case insensitive).</p>
-<p>To capture the output of your code, Markdown Exec patches the <code>print</code>
-function so that it writes to a buffer instead of standard output.</p>
 <p>See <a href="https://pawamoy.github.io/markdown-exec/usage/">usage</a> for more details,
 and the <a href="https://pawamoy.github.io/markdown-exec/gallery/">gallery</a> for more examples!</p>
 

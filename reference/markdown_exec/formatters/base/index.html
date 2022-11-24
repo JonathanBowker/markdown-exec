@@ -1013,7 +1013,7 @@
 
 
 <h2 id="markdown_exec.formatters.base.base_format" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">base_format</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">md</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">base_format</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">md</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">tabs</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">transform_source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
 
 <a href="#markdown_exec.formatters.base.base_format" class="headerlink" title="Permanent link">¤</a></h2>
 
@@ -1114,6 +1114,28 @@
           </td>
         </tr>
         <tr>
+          <td><code>id</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>An optional ID for the code block (useful when warning about errors).</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>transform_source</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#tuple">tuple</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]] | None</code>
+          </td>
+          <td><p>An optional callable that returns transformed versions of the source.
+The input source is the one that is ran, the output source is the one that is
+rendered (when the source option is enabled).</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
           <td><code>**options</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
@@ -1198,7 +1220,21 @@
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
-<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">base_format</span><span class="p">(</span>  <span class="c1"># noqa: WPS231</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">base_format</span><span class="p">(</span>  <span class="c1"># noqa: WPS231</span>
     <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">run</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
     <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1207,6 +1243,8 @@
     <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">result</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">tabs</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>  <span class="c1"># noqa: A002,VNE003</span>
+    <span class="n">transform_source</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markup</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Execute code and return HTML.</span>
@@ -1220,6 +1258,10 @@
 <span class="sd">        source: Whether to show source as well, and where.</span>
 <span class="sd">        result: If provided, use as language to format result in a code block.</span>
 <span class="sd">        tabs: Titles of tabs (if used).</span>
+<span class="sd">        id: An optional ID for the code block (useful when warning about errors).</span>
+<span class="sd">        transform_source: An optional callable that returns transformed versions of the source.</span>
+<span class="sd">            The input source is the one that is ran, the output source is the one that is</span>
+<span class="sd">            rendered (when the source option is enabled).</span>
 <span class="sd">        **options: Additional options passed from the formatter.</span>
 
 <span class="sd">    Returns:</span>
@@ -1228,17 +1270,25 @@
     <span class="n">markdown</span> <span class="o">=</span> <span class="n">MarkdownConverter</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
     <span class="n">extra</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extra&quot;</span><span class="p">,</span> <span class="p">{})</span>
 
+    <span class="k">if</span> <span class="n">transform_source</span><span class="p">:</span>
+        <span class="n">source_input</span><span class="p">,</span> <span class="n">source_output</span> <span class="o">=</span> <span class="n">transform_source</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">source_input</span> <span class="o">=</span> <span class="n">code</span>
+        <span class="n">source_output</span> <span class="o">=</span> <span class="n">code</span>
+
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">source_input</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Execution of </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2"> code block exited with non-zero status&quot;</span><span class="p">)</span>
+        <span class="n">identifier</span> <span class="o">=</span> <span class="nb">id</span> <span class="ow">or</span> <span class="n">extra</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">identifier</span> <span class="o">=</span> <span class="n">identifier</span> <span class="ow">and</span> <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">identifier</span><span class="si">}</span><span class="s2">&#39; &quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Execution of </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2"> code block </span><span class="si">{</span><span class="n">identifier</span><span class="si">}</span><span class="s2">exited with non-zero status&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">markdown</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="n">html</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">source</span><span class="p">:</span>
             <span class="n">placeholder</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid4</span><span class="p">())</span>
             <span class="n">wrapped_output</span> <span class="o">=</span> <span class="n">add_source</span><span class="p">(</span>
-                <span class="n">source</span><span class="o">=</span><span class="n">code</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">placeholder</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">,</span> <span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span>
+                <span class="n">source</span><span class="o">=</span><span class="n">source_output</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">placeholder</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">,</span> <span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span>
             <span class="p">)</span>
             <span class="k">return</span> <span class="n">markdown</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">wrapped_output</span><span class="p">,</span> <span class="n">stash</span><span class="o">=</span><span class="p">{</span><span class="n">placeholder</span><span class="p">:</span> <span class="n">output</span><span class="p">})</span>
         <span class="k">return</span> <span class="n">Markup</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
@@ -1248,7 +1298,7 @@
         <span class="n">wrapped_output</span> <span class="o">=</span> <span class="n">code_block</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">source</span><span class="p">:</span>
         <span class="n">wrapped_output</span> <span class="o">=</span> <span class="n">add_source</span><span class="p">(</span>
-            <span class="n">source</span><span class="o">=</span><span class="n">code</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">wrapped_output</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">,</span> <span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">source_output</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="n">wrapped_output</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="n">language</span><span class="p">,</span> <span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">markdown</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">wrapped_output</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
