@@ -10,4 +10,5 @@
         * [tree](markdown_exec/formatters/tree.md)
     * [logger](markdown_exec/logger.md)
     * [mkdocs_plugin](markdown_exec/mkdocs_plugin.md)
+    * [processors](markdown_exec/processors.md)
     * [rendering](markdown_exec/rendering.md)

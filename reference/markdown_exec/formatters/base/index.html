@@ -833,6 +833,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../processors/" class="md-nav__link">
+        processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../rendering/" class="md-nav__link">
         rendering
       </a>
@@ -1129,6 +1143,7 @@
     <span class="n">returncode</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">transform_source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">update_toc</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">options</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -1271,6 +1286,17 @@ rendered (when the source option is enabled).</p></td>
           </td>
         </tr>
         <tr>
+          <td><code>update_toc</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>Whether to include generated headings
+into the Markdown table of contents (toc extension).</p></td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
           <td><code>**options</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
@@ -1391,7 +1417,10 @@ rendered (when the source option is enabled).</p></td>
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">base_format</span><span class="p">(</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">base_format</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">language</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">run</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
@@ -1405,6 +1434,7 @@ rendered (when the source option is enabled).</p></td>
     <span class="n">returncode</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="n">transform_source</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">session</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">update_toc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markup</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute code and return HTML.</span>
@@ -1424,12 +1454,14 @@ rendered (when the source option is enabled).</p></td>
 <span class="sd">            The input source is the one that is ran, the output source is the one that is</span>
 <span class="sd">            rendered (when the source option is enabled).</span>
 <span class="sd">        session: A session name, to persist state between executed code blocks.</span>
+<span class="sd">        update_toc: Whether to include generated headings</span>
+<span class="sd">            into the Markdown table of contents (toc extension).</span>
 <span class="sd">        **options: Additional options passed from the formatter.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        HTML contents.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">markdown</span> <span class="o">=</span> <span class="n">MarkdownConverter</span><span class="p">(</span><span class="n">md</span><span class="p">)</span>
+    <span class="n">markdown</span> <span class="o">=</span> <span class="n">MarkdownConverter</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">update_toc</span><span class="o">=</span><span class="n">update_toc</span><span class="p">)</span>
     <span class="n">extra</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;extra&quot;</span><span class="p">,</span> <span class="p">{})</span>
 
     <span class="k">if</span> <span class="n">transform_source</span><span class="p">:</span>

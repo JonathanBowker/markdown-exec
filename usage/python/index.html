@@ -826,6 +826,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../reference/markdown_exec/processors/" class="md-nav__link">
+        processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../reference/markdown_exec/rendering/" class="md-nav__link">
         rendering
       </a>
@@ -1012,7 +1026,8 @@ print(&quot;**Hello world!**&quot;)
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p><strong>Hello world!</strong></p>
+<p><code>python exec="1"
+print("**Hello world!**")</code></p>
 </div>
 </div>
 </div>
@@ -1032,10 +1047,16 @@ I&#39;m not the result...
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m the result!&quot;</span><span class="p">)</span>
-<span class="go">I&#39;m not the result...</span>
-<span class="go">I&#39;m the result!</span>
-</code></pre></div>
+<p>```pycon exec="1" source="console"</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>print("I'm the result!")
+I'm not the result...
+```</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </div>
 </div>
 </div>
@@ -1055,15 +1076,20 @@ Baron
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Baron&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="go">Baron</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="s2">&quot;???&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
-<span class="go">???</span>
-<span class="go">Baron</span>
-<span class="go">???</span>
-</code></pre></div>
+<p>```pycon exec="1" source="console"</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>name = "Baron"
+print(name)
+Baron
+age = "???"
+print(age)
+???
+```</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </div>
 </div>
 </div>
